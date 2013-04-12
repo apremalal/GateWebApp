@@ -1,0 +1,14 @@
+
+Phase: SimpleOperation
+Input: Token
+Options: control = appelt
+
+Rule: PlotOperation
+({Token.string ==~ "[Pp]lot"}|{Token.string ==~ "[Gg]raph"}
+):tok
+-->
+:tok.Operation = 
+{
+kind = "operation" rule = "PlotOperation" operation = "plot"
+answerType = "graph"
+}

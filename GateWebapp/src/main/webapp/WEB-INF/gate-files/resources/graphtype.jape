@@ -1,0 +1,17 @@
+Imports: {
+	import java.util.*;
+}
+
+Phase: SimpleGraph
+Input: Token Lookup
+Options: control = appelt
+
+Rule: GraphType
+(
+ {Lookup.majorType == "graph"}
+):graph_type
+-->
+:graph_type.GraphType = 
+{
+	rule = "GraphType" , type = :graph_type@string
+}

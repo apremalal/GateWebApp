@@ -1,0 +1,36 @@
+Phase: Simple
+Input: Token
+Options: control = appelt
+
+Rule: FinanceRule1
+Priority: 100
+({Token.string == "net"}
+{Token.string == "revenue"}
+):tok1
+-->
+:tok1.Domain = 
+{
+	kind = "finance" rule = "simple2" word = "net revenue"
+}
+
+
+Rule: AnswerTypeFinite
+Priority: 50
+({Token.string == "[Ww]hat"}
+{Token.string == "is"}
+):tok2
+-->
+:tok2.Domain = 
+{
+kind = "finance" rule = "AnswerTypeFinite" answerType = "finite"
+}
+
+Rule: Operation
+Priority: 30
+({Token.string == "[Pp]lot"}
+):tok3
+-->
+:tok3.Domain = 
+{
+kind = "finance" rule = "Operation" operation = "plot"
+}

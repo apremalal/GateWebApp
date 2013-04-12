@@ -1,0 +1,54 @@
+
+Phase: SimpleAnswer
+Input: Token Lookup
+Options: control = appelt
+
+
+/*
+ *Common Entities
+	PERSON,LOCATION,DATE,
+ *Domain specific 
+	EXACT_VALUE,GRAPH,EXACT_PREDICTION,SERIES_PREDICTION,COMPARISON
+*/
+Rule: AnswerTypeExact
+
+({Token.string ==~ "[Ww]hat"}
+	{Token.string == "is"}
+):ans_exact
+-->
+:ans_exact.AnswerType = 
+{
+	rule = "AnswerTypeExact" ,kind = "EXACT_VALUE"  ,text = :ans_exact@string
+}
+
+Rule: AnswerTypeLocation
+(
+	{Token.string == "where"}
+):ans_loc
+-->
+:ans_loc.AnswerType = 
+{
+	rule = "AnswerTypeLoc" ,kind = "LOCATION"  ,text = :ans_loc@string
+}
+
+Rule: AnswerTypeDate
+(
+	{Token.string == "when"}
+):ans_date
+-->
+:ans_date.AnswerType = 
+{
+	rule = "AnswerTypeDate" ,kind = "DATE"  ,text = :ans_date@string
+}
+
+Rule: AnswerTypeGraph
+(
+	{Token.string == "plot"}
+):ans_graph
+-->
+:ans_graph.AnswerType = 
+{
+	rule = "AnswerTypeGraph", kind = "GRAPH" , text = :ans_graph@string
+}
+
+

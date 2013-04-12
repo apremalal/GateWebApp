@@ -1,0 +1,13 @@
+Phase: SimpleRelations
+Input: Token Lookup Date
+Options: control = appelt
+
+Rule: YearParamRelation
+( 
+	{Lookup.majorType == excelparam}{Date.kind == date , Date.rule2 == YearOnlyFinal }
+):rel_datedparam
+-->
+:rel_datedparam.Relations = 
+{
+	rule = "YearParamRelation" APS = :rel_datedparam.Lookup@string  year = :rel_datedparam.Date@string
+}

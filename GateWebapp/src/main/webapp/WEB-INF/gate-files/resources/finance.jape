@@ -1,0 +1,13 @@
+Phase: SimpleFinance
+Input: Token
+Options: control = appelt
+
+Rule: FinanceRule1
+({Token.string == "net"}
+{Token.string == "revenue"}
+):tok
+-->
+:tok.DecisiveWords = 
+{
+	kind = "finance" rule = "simpelrev" word = "net revenue"
+}
