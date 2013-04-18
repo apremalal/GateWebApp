@@ -6,8 +6,8 @@ This is a springMVC based web application.
 Features 
 =========
 
-Scalabele GATE application
-Sample JAPE rules to get started(src\main\webapp\WEB-INF\gate-files\resources)
+* Scalabele GATE application
+* Sample JAPE rules to get started(src\main\webapp\WEB-INF\gate-files\resources)
 
 
 Development instructions
