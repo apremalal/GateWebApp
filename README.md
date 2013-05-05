@@ -6,7 +6,7 @@ This is a springMVC based web application.
 Features 
 =========
 
-* Scalabele GATE application
+* Scalable GATE application
 * Sample JAPE rules to get started(src\main\webapp\WEB-INF\gate-files\resources)
 
 
